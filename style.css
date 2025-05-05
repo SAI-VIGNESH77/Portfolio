@@ -3,7 +3,7 @@
 /*===== VARIABLES CSS =====*/
 :root {
   --header-height: 3rem;
-  --font-semi: 600;
+  --font-semi: 700;
   /*===== Colores =====*/
   --hue-color: 24; 
   --first-color: hsl(24, 100%, 55%);   
@@ -42,10 +42,11 @@
  }
  
  body {
-   margin: var(--header-height) 0 0 0;
+   margin:  0;
    font-family: var(--body-font);
    font-size: var(--normal-font-size);
    color: var(--second-color);
+   background: linear-gradient(to left, hsl(24, 100%, 55%), white);
  }
  
  h1, h2, p {
@@ -208,6 +209,8 @@
    position: relative;
    row-gap: 5rem;
    padding: 4rem 0 5rem;
+   
+   
  }
  .home__data {
    align-self: center;
@@ -216,6 +219,24 @@
    font-size: var(--big-font-size);
    margin-bottom: var(--mb-5);
  }
+ .typing-text {
+  font-size: var(--big-font-size);
+  font-weight: bold;
+  color: var(--first-color);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  animation: blinkCursor 0.8s step-end infinite;
+}
+
+@keyframes blinkCursor {
+  50% { border-color: transparent; }
+}
+.home__title-glow {
+  color: var(--second-color);
+  text-shadow: 0 0 40px var(--first-color);
+  animation: glowPulse 2s ease-in-out infinite;
+}
  .home__title-color {
    color: var(--first-color);
  }
@@ -245,6 +266,7 @@
    width: 360px;
  }
  
+ 
  /*BUTTONS*/
  @keyframes flickerOpacitySmooth {
   0% { opacity: 1; }
@@ -266,6 +288,7 @@
   padding: 0.75rem 2.5rem;
   font-weight: var(--font-semi);
   border-radius: 0.5rem;
+  box-shadow: 0 0 12px var(--first-color);
   transition: 0.3s ease;
   animation: flickerOpacitySmooth 3s infinite linear;
 }
@@ -273,7 +296,7 @@
 /* On hover: stop flicker, apply glow */
 .button:hover {
   animation: none;
-  box-shadow: 0px 10px 36px rgba(231, 108, 50, 0.651);
+  box-shadow: 0 0 40px var(--first-color);
   opacity: 1;
 }
 
@@ -282,12 +305,11 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background-color: var(--first-color);
+  background-color: var(--second-color);
   color: beige;
   padding: 0.75rem 2.5rem;
   font-size: 1rem;
   font-weight: 600;
-  
   border-radius: 0.5rem;
   box-shadow: 0 0 12px var(--first-color);
   cursor: pointer;
@@ -330,9 +352,9 @@
  /* ===== ABOUT =====*/
  .about {
   padding: 5rem 5%;
-  background: linear-gradient(135deg, #fff9f5, #fff); /* soft background */
   position: relative;
   overflow: hidden;
+  background: linear-gradient(to left, hsl(24, 100%, 55%), white);
 }
 
 .about__container {
@@ -355,7 +377,9 @@
 
 .about__box:hover {
   transform: translateY(-5px);
-  
+  box-shadow: 
+  0 0 15px var(--second-color),
+  0 0 25px var(--first-color);
 }
 
 .about__line {
@@ -425,7 +449,9 @@
  /* Hover effect on the skill card */
  .skills__card:hover {
    transform: scale(1.03);
-   box-shadow: 0 6px 20px var(--first-color);
+   box-shadow: 
+   0 0 15px var(--first-color),
+   0 0 25px var(--second-color);
  }
  
  /* Icon style */
@@ -498,12 +524,7 @@
  
  
  /* education */ 
- :root {
-  --first-color: hsl(24, 100%, 55%);     /* orange-ish */
-  --second-color: hsl(0, 0%, 7%);        /* near black */
-  --text-color: #333;
-  --bg-color: #ffffff;
-}
+
 
 /* Body and general styles */
 body {
@@ -516,7 +537,8 @@ body {
 /* Education Section */
 .education-section {
   padding: 4rem 1rem;
-  background-color: var(--bg-color);
+  background: linear-gradient(to left, hsl(24, 100%, 55%), white);
+
 }
 
 .section-title {
@@ -567,7 +589,6 @@ body {
   background-color: #fff;
   padding: 1.5rem 1.5rem 1.5rem 3rem; /* extra padding on left for spacing */
   border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(255, 87, 34, 0.3);
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -575,7 +596,9 @@ body {
 
 .timeline-content:hover {
   transform: translateY(-6px);
-  box-shadow: 0 6px 20px rgba(255, 87, 34, 0.5);
+  box-shadow: 
+  0 0 15px var(--first-color),
+  0 0 25px var(--second-color);
 }
 
 /* Timeline Icon */
@@ -668,7 +691,9 @@ body {
  
  .project__card:hover {
    transform: translateY(-8px);
-   box-shadow: 0 6px 20px var(--first-color); 
+   box-shadow: 
+   0 0 15px var(--first-color),
+   0 0 25px var(--second-color); 
  }
  
  .project__img img {
@@ -731,13 +756,37 @@ body {
  .certification__card:hover .certification__img {
    animation: shake 0.5s;
  }
+ .certification__card {
+  position: relative;
+  padding: 1rem;
+ 
+  border-radius: 10px;
+  background: #fff;
+  transition: 0.3s ease;
+}
  .certification__header {
    display: flex;
    justify-content: space-between;
    align-items: center;
    margin-bottom: 0.5rem;
  }
- 
+ .certification__preview {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 300px;
+  display: none;
+  z-index: 10;
+}
+.certification__preview img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.certification__card:hover .certification__preview {
+  display: block;
+}
  .certification__date {
    font-size: 0.85rem;
    color: #666;
@@ -779,7 +828,7 @@ body {
  /* =====intership=====*/
  .internship {
    padding: 3rem 1rem;
-   background-color: #fff;
+   background: linear-gradient(to left, hsl(24, 100%, 55%), white);
  }
  
  .internship h2 {
@@ -982,7 +1031,10 @@ section.contact:hover {
 .contact__input:focus {
   animation: inputFocus 0.3s ease forwards;
 }
-
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 @keyframes inputFocus {
   0% {
     border-color: #ccc; /* Start with the default color */
