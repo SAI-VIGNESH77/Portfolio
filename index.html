@@ -14,6 +14,19 @@
 
         <title> Vignesh | Portfolio </title>
         <link rel="icon" type="image/png" href="Assets/profile-Icon.png">
+                      <script type="text/javascript"
+                      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+              </script>
+                    <script type="text/javascript"
+                    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+              </script>
+              <script type="text/javascript">
+                (function(){
+                  emailjs.init({
+                    publicKey: "YOUR_PUBLIC_KEY",
+                  });
+                })();
+              </script>
     </head>
     <body>
         <!--===== HEADER =====-->
@@ -47,7 +60,7 @@
             <!--===== HOME =====-->
             <section class="home bd-grid" id="home">
                 <div class="home__data">
-                    <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Vignesh</span><br> Software Developer</h1>
+                  <h1 class="home__title home__title-glow">Hi,<br>I'am <span class="home__title-color">Vignesh</span><br> <span class="typing-text">Software Developer</span></h1>
 
                     <a href="#contact" class="button">Hire Me</a>
                 </div>
@@ -289,31 +302,37 @@
               <section class="section" id="certifications">
                 <h2 class="section-title">Certifications</h2>
                 <div class="certifications__container bd-grid">
-
+                    <!--   Cpp   -->
                   <div class="certification__card">
                     <div class="certification__header">
                       <span class="certification__date">Completed: Aug 2023</span>
-                      <a href="https://your-certificate-link.com" target="_blank" class="certification__link" title="View Certificate">
+                      <a href="Assets\Cpp_certification.jpg" target="_blank" class="certification__link" title="View Certificate PDF">
                         <i class='bx bx-link-external'></i>
                       </a>
                     </div>
-                    <img src="Assets\Cpp_certification.jpg" alt="Certification 1" class="certification__img" />
+                    <a href="Assets\Cpp_certification.jpg" target="_blank" class="certification__preview-link">
+                      <img src="Assets\Cpp_certification.jpg" alt="C++ Certificate Preview" class="certification__img" />
+                    </a>
                     <h3 class="certification__name">CPA: Programming Essentials in C++</h3>
                   </div>
-
+                  <!--   Python    -->
                   <div class="certification__card">
                     <div class="certification__header">
-                      <span class="certification__date">Completed: may 2022</span>
-                      <a href="#" class="certification__link"><i class='bx bx-link-external'></i></a>
+                      <span class="certification__date">Completed: May 2022</span>
+                      <a href="Assets\python certification(jpg).jpg" target="_blank" class="certification__link" title="View Certificate PDF">
+                        <i class='bx bx-link-external'></i>
+                      </a>
                     </div>
-                    <img src="Assets\python certification(jpg).jpg" alt="Certification 2" class="certification__img" />
+                    <a href="Assets\python certification(jpg).jpg" target="_blank" class="certification__preview-link">
+                      <img src="Assets\python certification(jpg).jpg" alt="Python Certificate Preview" class="certification__img" />
+                    </a>
                     <h3 class="certification__name">PCAP: Programming Essentials in Python</h3>
                   </div>
-
+                  <!--   Sql   -->
                   <div class="certification__card">
                     <div class="certification__header">
                       <span class="certification__date">Completed: Mar 2025</span>
-                      <a href="#" class="certification__link"><i class='bx bx-link-external'></i></a>
+                      <a href="Assets\sql_basic certificate (jpg).jpg" class="certification__link"><i class='bx bx-link-external'></i></a>
                     </div>
                     <img src="Assets\sql_basic certificate (jpg).jpg" alt="Certification 3" class="certification__img" />
                     <h3 class="certification__name">SQL CERTIFICATION by HACKERANK</h3>
@@ -352,17 +371,25 @@
 
             <!--===== CONTACT =====-->
             <section class="contact section" id="contact">
-                <h2 class="section-title">Contact</h2>
-
-                <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Send" class="contact__button button">
-                    </form>
-                </div>
+              <h2 class="section-title">Contact</h2>
+            
+              <div class="contact__container bd-grid">
+                <form id="contact-form" class="contact__form">
+                  <input type="text" id="name" placeholder="Name" class="contact__input" required>
+                  <input type="email" id="email" placeholder="Email" class="contact__input" required>
+                  <textarea id="message" rows="10" class="contact__input" placeholder="Your message" required></textarea>
+                  <input type="submit" value="Send" class="contact__button button">
+                </form>
+              </div>
+              <!-- Toast Center -->
+                  <div id="toast" style="
+                  position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);background: #2c3e50;color: #fff;padding: 16px 30px;border-radius: 10px;font-size: 16px;display: none;z-index: 999;text-align: center;box-shadow: 0px 4px 20px rgba(0,0,0,0.2);transition: all 0.3s ease;
+                  "></div>
+                <div id="spinner" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.3); z-index: 998; justify-content: center; align-items: center;">
+                <div style="border: 4px solid #f3f3f3; border-top: 4px solid #2c3e50; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite;"></div>
+              </div>
             </section>
+            
         </main>
 
         <!--===== FOOTER =====-->
