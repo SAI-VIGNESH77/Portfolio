@@ -299,6 +299,13 @@
   box-shadow: 0 0 40px var(--first-color);
   opacity: 1;
 }
+.button-group {
+  display: flex;
+  gap: 1.5rem; SS
+  flex-wrap: wrap;
+  margin-top: 1rem; 
+}
+
 
  /* === Floating 'Hire Me' Button with Flicker Effect === */
 .hire-me-btn {
