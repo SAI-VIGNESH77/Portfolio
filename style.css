@@ -306,62 +306,74 @@
   margin-top: 1rem; 
 }
 
-
- /* === Floating 'Hire Me' Button with Flicker Effect === */
+/* === Floating 'Hire Me' Button with Flicker Effect === */
 .hire-me-btn {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background: linear-gradient(
-  135deg,
-  var(--first-color),
-  #ff914d 40%,
-  #ffb36b 70%,
-  #ffe0b2
-);
-
-  color:black;
-  padding: 0.75rem 2.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 12px var(--second-color), 0 0 25px var(--first-color);
+  background: linear-gradient(135deg, #ffffff, #ffe0b2, #ffb74d);
+  color: #1a1a1a;
+  padding: 0.85rem 2.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.75rem;
   cursor: pointer;
-  z-index: 999;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
-  animation: flickerBtn 2.5s infinite linear;
+  z-index: 999;
+  box-shadow: 0 8px 24px rgba(255, 152, 0, 0.3);
+  transition: all 0.3s ease;
+  animation: pulseGlow 2.5s infinite ease-in-out;
 }
 
 .hire-me-btn:hover {
-  transform: translateY(-4px);
-  background-color: hsl(24, 100%, 45%);
-  box-shadow: 0 0 20px var(--first-color);
+  transform: translateY(-6px) scale(1.03);
+  background: linear-gradient(135deg, #ffb74d, #ffa726, #fb8c00);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(255, 140, 0, 0.5);
+  animation: none;
 }
 
-/* === Flicker Animation === */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(255, 152, 0, 0.8), 0 0 25px rgba(255, 152, 0, 0.6);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 152, 0, 1), 0 0 30px rgba(255, 152, 0, 0.8);
+    transform: scale(1.05);
+  }
+}
+
 @keyframes flickerBtn {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  0%, 19%, 21%, 24%, 56%, 100% {
     opacity: 1;
-    box-shadow: 0 0 12px var(--first-color), 0 0 25px var(--first-color);
+    box-shadow: 
+      0 0 12px rgba(255, 224, 178, 0.9), 
+      0 0 25px rgba(255, 152, 0, 0.8);
   }
 
-  20%, 24%, 55% {
-    opacity: 0.3;
-    box-shadow: 0 0 2px var(--first-color), 0 0 4px var(--first-color);
+  20%, 23%, 55% {
+    opacity: 0.4;
+    box-shadow: 
+      0 0 3px rgba(255, 204, 128, 0.5), 
+      0 0 8px rgba(255, 183, 77, 0.4);
   }
 
   70% {
     opacity: 0.7;
-    box-shadow: 0 0 8px var(--first-color), 0 0 18px var(--first-color);
+    box-shadow: 
+      0 0 8px rgba(255, 183, 77, 0.7), 
+      0 0 18px rgba(255, 167, 38, 0.6);
   }
 
   80% {
     opacity: 0.2;
-    box-shadow: 0 0 2px var(--first-color), 0 0 6px var(--first-color);
+    box-shadow: 
+      0 0 2px rgba(255, 224, 178, 0.3), 
+      0 0 6px rgba(255, 204, 128, 0.4);
   }
 }
-
  
  /* ===== ABOUT =====*/
  .about {
