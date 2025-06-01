@@ -301,7 +301,7 @@
 }
 .button-group {
   display: flex;
-  gap: 1.5rem; SS
+  gap: 1.5rem; 
   flex-wrap: wrap;
   margin-top: 1rem; 
 }
@@ -312,13 +312,20 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background: linear-gradient(135deg, var(--second-color), #ff914d);
-  color: beige;
+  background: linear-gradient(
+  135deg,
+  var(--first-color),
+  #ff914d 40%,
+  #ffb36b 70%,
+  #ffe0b2
+);
+
+  color:black;
   padding: 0.75rem 2.5rem;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 0.5rem;
-  box-shadow: 0 0 12px var(--first-color);
+  box-shadow: 0 0 12px var(--second-color), 0 0 25px var(--first-color);
   cursor: pointer;
   z-index: 999;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1206,6 +1213,3 @@ section.contact:hover {
      width: 450px;
    }
  }
- 
- 
- 
