@@ -280,7 +280,10 @@
   40% { opacity: 1; }
   100% { opacity: 1; }
 }
-
+.button i {
+  margin-right: 20px; /* Increased from 12px */
+  vertical-align: middle;
+}
 .button {
   display: inline-block;
   background-color: var(--first-color);
